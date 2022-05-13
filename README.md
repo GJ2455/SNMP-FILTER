@@ -1,4 +1,4 @@
-#SNMP-FILTER
+# SNMP-FILTER
 
 ### A Lightweight & efficient SNMP trap filtering application written in Java, configurable via YAML.
 
