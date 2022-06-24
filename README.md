@@ -12,10 +12,9 @@ For example `prefixes.yaml` strictly with the property key `prefix-config`.
 
 ```
 prefix-config:
--dog
--cat
--ketchup
--frog
+- dog
+- cat
+- frog
 ```
 
 **A match is considered true if** :
