@@ -10,13 +10,13 @@ The permitted characters in the trie is defaulted to `a,b,c,d,e,f,g,h,i,j,k,l,m,
 Prefix dataset configuration must be provided via a YAML file containing a list of trap type(or enterprise) OID Prefixes. 
 For example `prefixes.yaml` strictly with the property key `prefix-config`.
 
-`
+```
 prefix-config:
 -dog
 -cat
 -ketchup
 -frog
-``
+```
 
 **A match is considered true if** :
 `The input oid is prefixed fully by a configured prefix-config.`
@@ -33,11 +33,11 @@ Set the **absolute path** to the configuration file as an env variable named `TR
 >$ export TRIE_PREFIXES=path/to/file-name.yaml
 
 Run the following commands
->$ cd snmp-filter
+>$ cd prefix-filter
 
->$ mvn -clean
+>$ mvn clean
  
->$ mvn -package
+>$ mvn package
 
 >$ java -cp target/prefix-filter-1.0-SNAPSHOT.jar com.gareth.filter.Main
 

@@ -12,7 +12,6 @@ public class PrefixConfig {
     private Set<String> prefixes;
 
     public Set<String> getPrefixes() {
-
         return prefixes;
     }
 }
