@@ -10,7 +10,7 @@ The permitted characters in the trie is defaulted to `a,b,c,d,e,f,g,h,i,j,k,l,m,
 Prefix dataset configuration must be provided via a YAML file containing a list of trap type(or enterprise) OID Prefixes. 
 For example `prefixes.yaml` strictly with the property key `prefix-config`.
 
-```
+`
 prefix-config:
 -dog
 -cat
