@@ -18,18 +18,18 @@ public final class ConfigurationLoader {
 
     private ConfigurationLoader() {}
 
-    public static TrapTypeOidPrefixes loadFromConfigFile(String configLocation) {
+    public static PrefixConfig loadFromConfigFile(String configLocation) {
         validateFileFormat(configLocation);
 
         File config = new File(configLocation);
-        TrapTypeOidPrefixes prefixes;
+        PrefixConfig prefixes;
         try {
             prefixes = parse(config);
         } catch (IOException e) {
             throw new RuntimeException("Failed to parse the configuration file.", e);
         }
 
-        if (prefixes.getTrapTypeOidPrefix() == null) {
+        if (prefixes.getPrefixes() == null) {
             throw new RuntimeException("No prefixes where found in the file. Check the property key is correct.");
         }
 
@@ -37,9 +37,9 @@ public final class ConfigurationLoader {
         return prefixes;
     }
 
-    private static TrapTypeOidPrefixes parse(File file) throws IOException {
+    private static PrefixConfig parse(File file) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
-        return objectMapper.readValue(file, TrapTypeOidPrefixes.class);
+        return objectMapper.readValue(file, PrefixConfig.class);
     }
 
     private static void validateFileFormat(String fileName) {

@@ -14,7 +14,6 @@ public final class AppProps {
     public static char[] getAllowedChars() throws IOException {
         return getProperty(ALLOWED_PREFIXES_PROP).toCharArray();
     }
-
     private static String getProperty(String value) throws IOException {
         Properties properties = new Properties();
         properties.load(PROPS_URL.openStream());

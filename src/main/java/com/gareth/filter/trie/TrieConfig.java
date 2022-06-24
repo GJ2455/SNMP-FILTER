@@ -3,7 +3,7 @@ package com.gareth.filter.trie;
 import java.util.Arrays;
 
 /**
- * Configuration class for {@link SNMPTrie} instance lifecycle.
+ * Configuration class for {@link PrefixTrie} instance lifecycle.
  *
  * Initializes an int array {@link allowedCharsToIndex} where allowed characters can be looked up with their ascii value and
  * return a configured index value which is inserted/looked up in an array of {@link TrieNode} children.
@@ -39,8 +39,7 @@ public class TrieConfig {
 
     private int[] initializeAllowedCharactersToIndexes(char[] supportedCharacters) {
         int maxChar = -1;
-
-        for (char c : supportedCharacters) {
+       for (char c : supportedCharacters) {
             if (c > maxChar) {
                 maxChar = c;
             }
@@ -49,7 +48,6 @@ public class TrieConfig {
         int[] charToIndex = new int[maxChar + 1];
 
         //default all indexes to -1 and set a new value at supported character indexes
-
         Arrays.fill(charToIndex, -1);
         for (int i = 0; i < supportedCharacters.length; i++) {
             charToIndex[supportedCharacters[i]] = i;
@@ -57,7 +55,6 @@ public class TrieConfig {
 
         return charToIndex;
     }
-
     /**
      * Lookup the mapped index for each character supplied and return them as a new int[] array.
      *
